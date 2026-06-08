@@ -1,0 +1,96 @@
+name: Build Packages
+
+on:
+ workflow_dispatch:
+ # push:
+
+permissions:
+ contents: write
+
+jobs:
+ build:
+ runs-on: ubuntu-latest
+
+strategy:
+  matrix:
+    arch:
+      - aarch64
+      - x86_64
+
+container:
+  image: ghcr.io/termux/package-builder:latest
+
+steps:
+  - uses: actions/checkout@v4
+    with:
+      submodules: recursive
+
+  - name: Build
+    run: |
+      mkdir -p output
+      bash -x build.sh -a "${{ matrix.arch }}"
+
+  - uses: actions/upload-artifact@v4
+    with:
+      name: packages-${{ matrix.arch }}
+      path: output
+
+publish:
+ needs: build
+ runs-on: ubuntu-latest
+
+env:
+  GPG_KEY_ID: B740141714937F5987E2F56AD90D5C7DEC721765
+
+steps:
+  - uses: actions/checkout@v4
+
+  - uses: actions/download-artifact@v4
+    with:
+      path: artifacts
+
+  - name: Install tools
+    run: |
+      sudo apt update
+      sudo apt install -y git gnupg curl
+
+  - name: Import GPG key
+    run: |
+      echo "${{ secrets.PACKAGES_GPG_KEY }}" | base64 -d | gpg --batch --import
+
+  - name: Collect debs
+    run: |
+      mkdir -p output/debs
+      find artifacts -name "*.deb" -exec ln -sf {} output/debs/ \;
+
+  - name: Download termux-apt-repo
+    run: |
+      curl -L \
+        -o termux-apt-repo \
+        https://raw.githubusercontent.com/termux/termux-apt-repo/master/termux-apt-repo
+      chmod +x termux-apt-repo
+
+  - name: Create repository
+    run: |
+      mkdir repo
+      bash ./termux-apt-repo output/debs repo stable main
+
+  - name: Sign repository
+    run: |
+      echo "${{ secrets.PACKAGES_GPG_KEY_PASS }}" | \
+      gpg \
+        --yes \
+        --passphrase-fd 0 \
+        --pinentry-mode loopback \
+        --digest-algo SHA256 \
+        --clearsign \
+        -u "${GPG_KEY_ID}" \
+        -o repo/dists/stable/InRelease \
+        repo/dists/stable/Release
+
+  - name: Deploy Pages Branch
+    uses: peaceiris/actions-gh-pages@v4
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_branch: pages
+      publish_dir: repo

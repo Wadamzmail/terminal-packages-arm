@@ -21,9 +21,6 @@ jobs:
       image: ghcr.io/termux/package-builder:latest
       options: --privileged --device /dev/fuse
 
-    env:
-      GPG_KEY_ID: B740141714937F5987E2F56AD90D5C7DEC721765
-
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,18 +66,54 @@ jobs:
           else
             echo "NDK cached"
           fi
-      
+
       - name: Build packages
         run: |
           export ANDROID_NDK_HOME=/github/home/lib/android-ndk-r29
           export NDK=/github/home/lib/android-ndk-r29
-          bash -x build.sh -a "${{ matrix.arch }}" -o "output/${{ matrix.arch }}"
-          
-      - name: Show output structure
-        run: find output -type f | head -50 
+          bash -x build.sh -a "${{ matrix.arch }}"
+
+      - name: Rename debs (remove epoch colon)
+        run: |
+          find output -name "*.deb" | while read f; do
+            newname=$(echo "$f" | tr ':' '_')
+            [ "$f" != "$newname" ] && mv "$f" "$newname"
+          done
+
+      - uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: packages-${{ matrix.arch }}
+          path: output/${{ matrix.arch }}
+          retention-days: 1
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+
+    env:
+      GPG_KEY_ID: B740141714937F5987E2F56AD90D5C7DEC721765
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: output
+
+      - name: Fix artifact directory structure
+        run: |
+          mv output/packages-aarch64 output/aarch64 || true
+          mv output/packages-arm output/arm || true
+
+      - name: Install tools
+        run: sudo apt-get install -y gnupg curl wget python3
 
       - name: Generate APT repository
-        run: bash ./generate-apt-repo.sh
+        run: |
+          export COTG_OUTPUT_DIR="$(pwd)/output"
+          export COTG_REPO_DIR="$(pwd)/output/repo"
+          bash ./generate-apt-repo.sh
 
       - name: Import GPG key
         run: |
@@ -99,24 +132,10 @@ jobs:
             -o output/repo/dists/stable/InRelease \
             output/repo/dists/stable/Release
 
-      - name: Rename debs (remove epoch colon)
-        run: |
-          find output -name "*.deb" | while read f; do
-            newname=$(echo "$f" | tr ':' '_')
-            [ "$f" != "$newname" ] && mv "$f" "$newname"
-          done
-
-      - uses: actions/upload-artifact@v4
-        continue-on-error: true
-        with:
-          name: packages-${{ matrix.arch }}
-          path: output
-          retention-days: 1
-
       - name: Deploy to pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: pages
           publish_dir: output/repo
-          keep_files: true
+          keep_files: false

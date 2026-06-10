@@ -73,6 +73,9 @@ jobs:
           export NDK=/github/home/lib/android-ndk-r29
           bash -x build.sh -a "${{ matrix.arch }}"
 
+      - name: Show output structure
+        run: find output -type f -name "*.deb" | head -20 || echo "No debs found"
+
       - name: Rename debs (remove epoch colon)
         run: |
           find output -name "*.deb" | while read f; do

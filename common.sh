@@ -38,7 +38,7 @@ TERMUX_PKG_API_LEVEL=28
 export TERMUX_PKG_API_LEVEL
 
 # The URL of the repository where the packages will be published
-COTG_REPO="https://Wadamzmail.github.io/terminal-packages"
+COTG_REPO="https://github.com/Wadamzmail/terminal-packages/raw/refs/heads/pages"
 export COTG_REPO
 
 # All supported CPU ABIs

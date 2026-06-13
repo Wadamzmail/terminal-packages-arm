@@ -54,6 +54,11 @@ COTG_PACKAGES__BASE=(
     "patch"
     "unzip"
     "zip"
+    
+    #AndroidIDE 
+    "jq" 
+    "openssh" 
+    "libcur" 
 )
 
 # debug-only packages

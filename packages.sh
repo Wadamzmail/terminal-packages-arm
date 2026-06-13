@@ -56,11 +56,8 @@ COTG_PACKAGES__BASE=(
     "zip"
     
     #AndroidIDE 
-    "libandroid-glob"
-    "libandroid-support" 
     "jq" 
-    "openssh" 
-    "libcurl" 
+    "openssh"
 )
 
 # debug-only packages

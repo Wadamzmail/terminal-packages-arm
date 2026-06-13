@@ -60,7 +60,7 @@ COTG_PACKAGES__BASE=(
     "libandroid-support" 
     "jq" 
     "openssh" 
-    "libcur" 
+    "libcurl" 
 )
 
 # debug-only packages

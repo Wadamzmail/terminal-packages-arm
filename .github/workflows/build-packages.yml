@@ -80,6 +80,12 @@ jobs:
         if: always()
         run: cat output/arm/build.log || cat output/aarch64/build.log || echo "no log"
 
+      - name: Show compiler errors
+        if: failure()
+        run: |
+          grep -A50 -B50 "C compiler cannot create executables" \
+          /github/home/.termux-build/krb5/build/config.log || true
+
       - name: Debug debs location
         if: always()
         run: |

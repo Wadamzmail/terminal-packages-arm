@@ -1057,6 +1057,38 @@ SHA1: da360641895ce27c32bfa6468f378a2584e940e3
 SHA256: 7cd4d318349ce6206af03981b4d21e80a25d4bc0182b76587a509c8e261987e0
 SHA512: 09be6d3a8c6b47df1f124ff987e181bfb6605555a551b29078c2639b6c4527b3f91a7ff655b60e788c92b9a947d7d7ec1b877f06b006890374dfab92640372af
 
+Package: jq-static
+Architecture: aarch64
+Installed-Size: 604
+Maintainer: @termux
+Version: 1.8.1-1
+Homepage: https://jqlang.org/
+Depends: jq (= 1.8.1-1)
+Description: Static libraries for jq
+Filename: dists/stable/main/binary-aarch64/jq-static_1.8.1-1_aarch64.deb
+Size: 137476
+MD5Sum: 0fed9f194cbd57f11c91b54903f6cca1
+SHA1: d70b3d28de345003c99d5372fc54829abe9b5f85
+SHA256: d92337d88c3e07d5a3c4463021b71ed48a79c514aed742ebc16150a2f1b279ad
+SHA512: 689b3abc7dead544241a3445d65c127a6671307ac58437f028ecf0a01896d203f0db9bb6a44336fa7fe88f962dd6d90ca6ee1990e2a4bcb92063bb6b9d9eff57
+
+Package: jq
+Architecture: aarch64
+Installed-Size: 500
+Maintainer: @termux
+Version: 1.8.1-1
+Homepage: https://jqlang.org/
+Breaks: jq-dev
+Depends: oniguruma
+Replaces: jq-dev
+Description: Command-line JSON processor
+Filename: dists/stable/main/binary-aarch64/jq_1.8.1-1_aarch64.deb
+Size: 177660
+MD5Sum: 4de8f02557e03c53ee4a14dc92ed8407
+SHA1: d22c127fd024df47595033109996b458b5f507e7
+SHA256: 24431faba5763cb7583ae1a2479ad0d8a9ae2461712c3d29cbcc75b53bc1a2ba
+SHA512: ce156d696392b5b197d79c9363c6e0bbf309fd0e5fcf4c88237d4cd156b9750b50bae329287f42d9cc05ae49f73c9756c3a9fa9f428b2d3ece718110b78bc0f9
+
 Package: jsoncpp-static
 Architecture: aarch64
 Installed-Size: 468
@@ -3928,6 +3960,35 @@ MD5Sum: 863ae2e00b36b16cba2e7139aeef9d86
 SHA1: b89f6040ed5a2abfc85f152d8cf407aa92808b7a
 SHA256: f99e38c0765108dce2158ed64ed7d4f639c492e5121901a5857731d3bb9792b2
 SHA512: 7ab0a93d86e4c2a1072f7a1caca2b83025352ebf013f71ed085c18c43db80d8564a6859748a41745bae0e8c2d7e9c03996d5e16de930ac3d8676607ee20993e9
+
+Package: oniguruma-static
+Architecture: aarch64
+Installed-Size: 816
+Maintainer: @termux
+Version: 6.9.10-1
+Homepage: https://github.com/kkos/oniguruma
+Depends: oniguruma (= 6.9.10-1)
+Description: Static libraries for oniguruma
+Filename: dists/stable/main/binary-aarch64/oniguruma-static_6.9.10-1_aarch64.deb
+Size: 143032
+MD5Sum: bd42ea2b543088223bdf524eb31624d4
+SHA1: 87c9d64b8b0232583bcdc03262745dc0b548f6c6
+SHA256: cc0ab52bcb9cb131694e34aaa013e39fe6c92e7db151321a7e0944e9a22cb495
+SHA512: ea59854788e6a8573e6fea24cf25b2e7f3993f06bcc8ddb78192354946305498953eede1bc613f965e43224a873394572ca2d4a1f88331325a6718f045549593
+
+Package: oniguruma
+Architecture: aarch64
+Installed-Size: 664
+Maintainer: @termux
+Version: 6.9.10-1
+Homepage: https://github.com/kkos/oniguruma
+Description: Regular expressions library
+Filename: dists/stable/main/binary-aarch64/oniguruma_6.9.10-1_aarch64.deb
+Size: 135052
+MD5Sum: 607ddf0b17704b9769cde5f30fd7f7a4
+SHA1: 23a355738cc7b4d3b0170abf7d4b273c43272dbd
+SHA256: a3a701d52fe1554f007282df614ad734c5acfa34262f49f18ed09da39969bf29
+SHA512: 332d04e3b62427809a7864865784f6bd20b825474c011e9013f7381ec57277c13ba700b0400c5be5186719b87e7e92e0c9c59214e92edd35e155fff0bf7378d0
 
 Package: openjdk-21-x
 Architecture: aarch64

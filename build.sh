@@ -100,6 +100,10 @@ declare -a PATCHES=(
   # these keyring files are used when we build packages with the -I flag
   # since we use a different signing key, we need to update the reference here
   "use-our-keys-to-install-deps.patch"
+
+  # test by Wadamzmail 
+  "openssh-disable-kerberos.patch"
+  
 )
 
 # Script configuration

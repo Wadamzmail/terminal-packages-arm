@@ -13,6 +13,28 @@ declare -a COTG_PACKAGES__RELEASE
 # that we need to build
 declare -a COTG_PACKAGES
 
+declare -a BASE_PACKAGES
+
+BASE_PACKAGES=(
+
+# Additional.
+    "brotli"
+    "ed"
+    "debianutils"
+    "dos2unix"
+    "git"
+    "inetutils"
+    "lsof"
+    "mandoc"
+    "nano"
+    "net-tools"
+    "openjdk-21"
+    "patch"
+    "unzip"
+    "zip"
+
+)
+
 COTG_PACKAGES__BASE=(
 
     ## ---- Bootstrap packages ---- ##
@@ -38,22 +60,6 @@ COTG_PACKAGES__BASE=(
     "termux-keyring"
     "termux-tools"
     "util-linux"
-
-    # Additional.
-    "brotli"
-    "ed"
-    "debianutils"
-    "dos2unix"
-    "git"
-    "inetutils"
-    "lsof"
-    "mandoc"
-    "nano"
-    "net-tools"
-    "openjdk-21"
-    "patch"
-    "unzip"
-    "zip"
     
 
 )
@@ -79,6 +85,7 @@ COTG_PACKAGES=(
     "${COTG_PACKAGES__BASE[@]}"
     "${COTG_PACKAGES__DEBUG[@]}"
     "${COTG_PACKAGES__RELEASE[@]}"
+    "${BASE_PACKAKES[@]}"
 )
 
 # Extra packages that need to be available

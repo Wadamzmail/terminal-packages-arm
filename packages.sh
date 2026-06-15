@@ -114,5 +114,5 @@ COTG_PACKAGES+=(
     "libandroid-glob" 
    # "openssh"
     "openjdk-17"
-    "openjdk-25
+    "openjdk-25" 
 )

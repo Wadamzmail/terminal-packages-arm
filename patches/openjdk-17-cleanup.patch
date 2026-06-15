@@ -4,13 +4,13 @@ Date: Mon, 15 Jun 2026 18:09:28 +0200
 Subject: [PATCH] openjdk 17 cleanup
 
 ---
- packages/java-17-openjdk/build.sh | 18 ++++++++++++++++++
+ packages/openjdk-17/build.sh | 18 ++++++++++++++++++
  1 file changed, 18 insertions(+)
 
-diff --git a/packages/java-17-openjdk/build.sh b/packages/java-17-openjdk/build.sh
+diff --git a/packages/java-17-openjdk/build.sh b/packages/openjdk-17/build.sh
 index 7e6e868..59a70cf 100644
---- a/packages/java-17-openjdk/build.sh
-+++ b/packages/java-17-openjdk/build.sh
+--- a/packages/openjdk-17/build.sh
++++ b/packages/openjdk-17/build.sh
 @@ -95,6 +95,24 @@ termux_step_make_install() {
  	mkdir -p $TERMUX_PREFIX/lib/jvm/java-17-openjdk/etc/profile.d
  	echo "export JAVA_HOME=$TERMUX_PREFIX/lib/jvm/java-17-openjdk/" > \

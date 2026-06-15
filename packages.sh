@@ -62,7 +62,7 @@ COTG_PACKAGES__BASE=(
     "util-linux"
 
     #additional 
-    "${BASE_PACKAKES[@]}"
+    #"${BASE_PACKAKES[@]}"
     
 
 )
@@ -88,6 +88,7 @@ COTG_PACKAGES=(
     "${COTG_PACKAGES__BASE[@]}"
     "${COTG_PACKAGES__DEBUG[@]}"
     "${COTG_PACKAGES__RELEASE[@]}"
+    "${BASE_PACKAKES[@]}"
 )
 
 # Extra packages that need to be available

@@ -37,11 +37,11 @@ Homepage: https://curl.se/docs/caextract.html
 Depends: ca-certificates (= 1:2026.05.14)
 Description: Common CA certificates (java keystore format)
 Filename: dists/stable/main/binary-all/ca-certificates-java_1C2026.05.14_all.deb
-Size: 96484
-MD5Sum: af344ad51e4c1fabf1d4a444ba5fba1a
-SHA1: a1d6161c6f05e5e7dcc3fc31f7f5731bf413bc73
-SHA256: 51aee1edae71e9d67b6c98cfffae228cbdc0d0ecaf26571f25ca33fd2fad05dd
-SHA512: 7cb2d52989b43e50c1c8d9ea394f6be127621f49056cf67ea0fbcea2ae998408dcf6cb0f70fc7462a0e940c41926695d9d1050cf0034719e899f122980b8e4ce
+Size: 96476
+MD5Sum: 6f652d66db8db5e4192a63203ebc0b2d
+SHA1: bcc321cbca9a28af706dc62a9c6f58421e2c3043
+SHA256: 9800e2ef2ec8f0a9648221ed2e4c655cdf5f3cc1ba80747d1d52f63715e71661
+SHA512: 3d25dcd4bf659df829c817d906ff643236a678f73f399c93e8548fb38cf02a7507363ef0bbedbc4e9945937685a27bd67ed13ca6d40c0604705fc1cd8fd60ae2
 
 Package: ca-certificates
 Architecture: all
@@ -150,17 +150,17 @@ SHA512: 135136e7fc35c20faaf620a75fcc4d3ab3695ebfc03b552b43eee4d800089b8c7a5101fd
 
 Package: openjdk-21-source
 Architecture: all
-Installed-Size: 52380
+Installed-Size: 51964
 Maintainer: @termux
 Version: 21.0.11
 Homepage: https://openjdk.java.net
 Description: Source files for openjdk-21
 Filename: dists/stable/main/binary-all/openjdk-21-source_21.0.11_all.deb
-Size: 49124212
-MD5Sum: e7835abf8bbb9ad2a5b1fe335d403fca
-SHA1: 7a4077ad4fd6054f6e0494fad1786174a90f6afc
-SHA256: 7e48ec5170b48724bebc5e4818935b47788a0dac7006c02444ba486415ff2510
-SHA512: 11313820b513b6fc93fc1938e1939dff4dcad9e3b0e2340290fb8e4504ed42cbf3109b7c38178c7a5a86493b6c5ce7ecf12cfbe68cf66b8c14f25ccdb3989e17
+Size: 48734660
+MD5Sum: 7ddc380bb154b03a2f5d79b75faa0bb6
+SHA1: 20faf62f3e6dc7855b808dfccc8b2c54161b7311
+SHA256: cda5b83435440fd63d3479befc0c04abe321cdf93d7bd5f6a548e78d68a5b709
+SHA512: e482bbe6682e81283d6978e22bca28bfec66870b7dc88b06e6b8e1f37c349da856b9d324363c059b987e3073564a56ec1804577ef3fd2351ecd608cb9bde1296
 
 Package: python-ensurepip-wheels
 Architecture: all
@@ -190,11 +190,11 @@ Depends: python (>= 3.11.1-1)
 Recommends: clang, make, pkg-config
 Description: The PyPA recommended tool for installing Python packages
 Filename: dists/stable/main/binary-all/python-pip_26.1.2-1_all.deb
-Size: 1194336
-MD5Sum: 98390178564a96dd69edff5c4b056ea8
-SHA1: b163f7ca525be79c95d7d185352ef742bfbdbedf
-SHA256: 24da97c4b58dcf5e65cefe7d2fef009bff145a1d6f923a81ad13429210776daf
-SHA512: 4802840c00f72d69eaf850d99947790bc0b75c768506b0b2a7fa28d48e5844aec3961a3cc261b702a5e65e89f1902ab095844a36ba71a1f78c4e5c69b28810df
+Size: 1194316
+MD5Sum: 70766cd7228a35a1d302dea5ddb8d4bc
+SHA1: e2265e279bb574deda4eae2b82be2c894549c95f
+SHA256: 8af093e4140ce7e34ab0589497447069d84252ed887f24ee4adc630261ef23ac
+SHA512: d8a8bb876b8f3fe0bd2ffdaf197d11ff9241cdbd0acf89f4ebe503500184845aca381ce7dff7b4f18c64062cf17f29751c6959c1957d753976ee2ba02e7502fd
 
 Package: python-xcbgen
 Architecture: all

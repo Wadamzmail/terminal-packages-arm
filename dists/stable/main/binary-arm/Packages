@@ -3537,11 +3537,11 @@ Homepage: https://invisible-island.net/ncurses/
 Depends: ncurses (= 6.6.20260307+really6.5.20250830)
 Description: Static libraries for ncurses
 Filename: dists/stable/main/binary-arm/ncurses-static_6.6.20260307+really6.5.20250830_arm.deb
-Size: 139836
-MD5Sum: 2e7db27923c8b2f7627f55e257b13a4b
-SHA1: 4da7500ed6b2cc52936e56c1347d4b554117a909
-SHA256: 64ce0aa79b8b519f8afc09f8a2c7914a8818991c24f056798fb089b2e552b2e5
-SHA512: 3b6f34a916ae880fb0952fd7cb1ab8d59df913d27adaf5e445ce1a1032f6f251a4d600dfab14c0ba81f6750bb71c843a4ef90fb12015787ab81ca5192b3558f5
+Size: 139812
+MD5Sum: efc439c5fd4fdcec769cb15ab7efca7f
+SHA1: 645e87b118a15094df69d147c63de445f0f8a5de
+SHA256: 32a70531cdbd0bcb02b224a82ec9af063b7a22b05649b665ffd4251806eb2e64
+SHA512: 4f8890909ae05cba60b713bf9bf5b60f15251fca5f255d2ca3aefe826f4c72c580f5eeadd4494a79d9bebd1ad07ba4558e9abd572c81c42ec65980e885dc1a8c
 
 Package: ncurses-ui-libs-static
 Architecture: arm
@@ -3552,11 +3552,11 @@ Homepage: https://invisible-island.net/ncurses/
 Depends: ncurses-ui-libs, ncurses (= 6.6.20260307+really6.5.20250830)
 Description: Static libraries for terminal user interfaces based on ncurses
 Filename: dists/stable/main/binary-arm/ncurses-ui-libs-static_6.6.20260307+really6.5.20250830_arm.deb
-Size: 34496
-MD5Sum: 47f78e2f47aa0bbc0d4e0676dca17aab
-SHA1: 12a1d93b720495e24d4e0245a2742b1317a17327
-SHA256: 0bef3bb3467b11be305e094b302d846020080b0c6735762ff42bfccff211719f
-SHA512: b1607d70db2d2804c3d1ea4b5fadc28e43baa9514d76a244fd53d9b3836064f13a5d543550b6c00e6431bade8156dbdd81106742ea2d477947c5d231680956cb
+Size: 34480
+MD5Sum: 99650b67e31da95db1f057c7a5aea016
+SHA1: 66ca33af14cc7c80d9aff691267ccc79d79adafd
+SHA256: a5d26b93206954a5f582e4a941dea8a8085dca70e8c6692b125f3f45bc43f48d
+SHA512: 416c3685793e966db3a085b75086fd39a1691808ba856788178714feae7eeecb09685f02def0e64cc2a1e24083785797f36fafee83627c388567c8b3a15114ea
 
 Package: ncurses-ui-libs
 Architecture: arm
@@ -3690,11 +3690,11 @@ Recommends: ca-certificates-java, openjdk-21-x, resolv-conf
 Suggests: cups
 Description: Java development kit and runtime
 Filename: dists/stable/main/binary-arm/openjdk-21_21.0.11_arm.deb
-Size: 98928776
-MD5Sum: 9e8f8b243acb511f118fc1ec01125378
-SHA1: 531377eb20f4ab25db5503d61e0c754a649c217b
-SHA256: 4a866aa86659b4c654e99c55c0d4d207d9356c323e446d80e7e4e94b3655520b
-SHA512: 454b1afe7b2ef838416f5d91449ed71d1fdca5ea062adddbf3d8af523eff55f73f755375cbe720e673db35982048a81c894529ef0df7b18c8816174bae3ed924
+Size: 98928772
+MD5Sum: 99b297aed6470d6fc88edc723962565e
+SHA1: 77a373e8dc2754e36de963dc2f818116f73cbcb0
+SHA256: 21811daa1230c290443ed282d803a50b4bdfaad6f52f3c20d2bbba886e8701a4
+SHA512: 6f0961a209b5c242b827cd62840d25d8f0dc3fcc1cffeaca5b1be463a16669ec77a8f2592a3ef29600f975f4baeebe91b0d97faab543ba1db7893597cbf5b70f
 
 Package: openssl-static
 Architecture: arm
